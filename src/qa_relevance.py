@@ -36,8 +36,10 @@ types = df['Type'].tolist()
 categories = df['Category'].tolist()
 questions = df['Question'].tolist()
 answers = df['Answer'].tolist()
-sources = df['Source'].tolist()
 real_fact_labels = df['Factuality_ground_label'].tolist()
+sources = df['Source'].tolist()
+manual_labels = df['manual_checkworthy'].tolist()
+
 
 # Read main instruction
 with open(filePromptName, 'r', encoding="utf-8") as f:
@@ -89,10 +91,12 @@ for _ in tqdm(range(len(questions)-i)):
     "Category": categories[i],
     "Question": questions[i],
     "Answer": answers[i],
-    "Source": sources[i],
     "Factuality_ground_label": real_fact_labels[i],
-    "Model_checkworthiness_judgement": current_output,
-    "Model_checkworthiness_label": model_checkworthy_label
+    "Source": sources[i],
+    "manual_checkworthy": manual_labels,
+    "model_checkworthiness_judgement": current_output,
+    "model_checkworthiness": model_checkworthy_label,
+    
     }     
     
     results.append(output_dict)
