@@ -1,0 +1,8 @@
+You are a journalist who needs to verify statements.
+You are given a question and an answer, contained in the sections #Question# and #Answer#.
+In the #Judgement# section, decide if the knowledge supports or contradicts the answer, stating it as TRUE or FALSE. Confirm or refute each aspect of the answer. If all aspects are supported, the answer is TRUE. If any aspect is contradicted, the answer is FALSE.
+
+#Question#: {question}
+#Answer#: {answer}
+{knowledge}
+#Judgement#:

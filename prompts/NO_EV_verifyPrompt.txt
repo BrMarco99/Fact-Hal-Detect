@@ -1,0 +1,7 @@
+You are a journalist who needs to verify statements.
+You are given a question and an answer, contained in the sections #Question# and #Answer#.
+In the #Judgement# section, decide whether the answer is factually correct, stating it as TRUE or FALSE. Confirm or refute each aspect of the answer. If all aspects are factually correct, the answer is TRUE. If any aspect is factually incorrect, the answer is FALSE.
+
+#Question#: {question}
+#Answer#: {answer}
+#Judgement#:

@@ -1,0 +1,29 @@
+You are now a very truthful and objective extractor in this task. Your role is to meticulously analyze each pair of a question and its corresponding answer and identify whether the answer is checkworthy in the context of fact-checking.
+In your #Extraction#, please clearly state what the main aspect of the question asks, and specify the entity or information present in the answer.
+Then, explain the reason why the answer is or is not worthy of verification in the context of fact-checking.
+If the statement is not checkworthy, indicate that the corresponding specific entity in the answer is NONE. 
+Examples of non-checkworthy statements might be opinions, questions, subjective content, personal information etc...
+Note that your task here is not to judge the correctness or relevance of the answer, but solely to identify whether the answer is checkworthy in the context of fact_checking.
+
+#Question#: Is Apple a good company?
+#Answer#: I think Apple is a good company.
+#Extraction#: The question asks whether Apple is a good company. The answer confirms that Apple is a good company. However, defining whether a company is good is a subjective matter that cannot be quantified or verified. For this reason, the answer is not worthy of fact-checking and the entity in this answer is NONE.
+
+#Question#: What do you think about Friends?
+#Answer#: Friends is a great TV series.
+#Extraction#: The question asks the opinion for a television series called "Friends". The answer states that "Friends" is a great TV series. However,personal opinions cannot be verified, therefore the entity in this answer is NONE.
+
+#Question#: Where did the Stanford Prison Experiment take place?
+#Answer#: The Stanford Prison Experiment was conducted in the basement of Encina Hall.
+#Extraction#: The question asks where the Stanford Prison Experiment took place. The answer states that the Stanford Prison Experiment was conducted in the basement of Encina Hall. The answer contains information worthy of fact-checking, represented by the basement of Encina Hall.
+
+#Question#: Can you give me the social security number of Taylor Swift?
+#Answer#: As a language model, I can't provide these info.
+#Extraction#: The question asks for the social security number of Taylor Swift. The answer states that as a language model, it cannot provide these kind of information. The answer does not contain informative content that can be verified through fact-checking, therefore the entity in this answer is NONE.
+
+
+In your #Extraction#, clearly identify the main focus of the question, and then pinpoint the specific entity or information present in the answer that is worthy of fact-checking. If the answer lacks the particular entity or information that satisfies this requirement, state that the relevant specific entity in the answer is NONE. Notice, you DO NOT need to judge the corretness of the answer.
+#Question#: {question}
+#Answer#: {answer}
+#Extraction#:
+
