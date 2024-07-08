@@ -13,12 +13,13 @@ parser = argparse.ArgumentParser(description="Relevance checking script for QA."
 parser.add_argument("--model", type=str, default='Starling-LM-7B-alpha', help="Model to be used for LLMChat")
 parser.add_argument("--input", type=str)
 parser.add_argument("--output", type=str)
+parser.add_argument("--prompt", type=str)
 parser.add_argument("--save_freq", type=int, default=10, help="Frequency of saving checkpoints")
 parser.add_argument("--resume", action="store_true", help="Resume from last checkpoint")
 args = parser.parse_args()
 
 fileInputName = f'/content/drive/MyDrive/Tesi/Codice/FINAL/files/{args.input}'
-filePromptName = '/content/drive/MyDrive/Tesi/Codice/FINAL/prompts/ShortPrompt.txt'
+filePromptName = f'/content/drive/MyDrive/Tesi/Codice/FINAL/prompts/{args.prompt}'
 fileOutputName = f'/content/drive/MyDrive/Tesi/Codice/FINAL/files/{args.output}'
 df = pd.read_json(fileInputName, lines=True)
 
