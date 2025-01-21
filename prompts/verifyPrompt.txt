@@ -1,8 +1,16 @@
-You are a journalist who needs to verify statements.
-You are given a question and an answer, contained in the sections #Question# and #Answer#.
-In the #Judgement# section, decide if the knowledge supports or contradicts the answer, stating it as TRUE or FALSE. Confirm or refute each aspect of the answer. If all aspects are supported, the answer is TRUE. If any aspect is contradicted, the answer is FALSE.
+Your task is to assess whether a given answer is factually grounded or not.
+You are given a question and an answer, delimited by the separators #Question# and #Answer#, an additional section #Reference knowledge# containing the groud truth for factual verification.
+In the #Judgement# section we must write "TRUE" or "FALSE". 
+We write "True" is the provided answer is completely true, we can use the reference knowledge to asses this.
+We write "False", if the answer is not true, i.e. it is not factually grounded.
+
+Following this template:
+#Question#: <A given question>
+#Answer#: <A given answer>
+#Reference knowledge#: <Some sources talking about the question>
+#Judgement#: TRUE (or FALSE depending on the factual groundness of the answer)
 
 #Question#: {question}
 #Answer#: {answer}
-{knowledge}
+#Reference knowledge#: {knowledge}
 #Judgement#:
