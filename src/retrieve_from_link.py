@@ -10,12 +10,9 @@ import spacy
 import numpy as np
 from copy import deepcopy
 import torch
-import concurrent.futures
-import backoff
 from collections import Counter
 import requests
-import re
-import itertools
+
 import bs4
 from typing import List, Dict, Any
 import argparse
@@ -162,12 +159,14 @@ def get_relevant_snippets(query, source_link, tokenizer, passage_ranker, timeout
 parser = argparse.ArgumentParser(description="Relevance checking script for QA.")
 parser.add_argument("--input", type=str)
 parser.add_argument("--output", type=str)
-parser.add_argument("--save_freq", type=int, default=10, help="Frequency of saving checkpoints")
+parser.add_argument("--save_freq", type=int, default=500, help="Frequency of saving checkpoints")
 parser.add_argument("--resume", action="store_true", help="Resume from last checkpoint")
 args = parser.parse_args()
 
-fileInputName = f'/content/drive/MyDrive/Tesi/Codice/FINAL/files/{args.input}'
-fileOutputName = f'/content/drive/MyDrive/Tesi/Codice/FINAL/files/{args.output}'
+files_path = "../files"
+output_path = "output"
+fileInputName = os.path.join(files_path, "TruthfulQA", args.input)
+fileOutputName = os.path.join(output_path, args.output)
 df = pd.read_json(fileInputName, lines=True)
   
 print ("OPENING: ", fileInputName)
@@ -229,7 +228,6 @@ for _ in tqdm(range(len(questions)-i)):
         with jsonlines.open(fileOutputName, 'a') as writer:
             for result in results:
                 writer.write(result)
-                print("Done")
             writer.close()
             print("File written")
             results = []

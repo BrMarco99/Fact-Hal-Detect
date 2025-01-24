@@ -20,7 +20,8 @@ class LLMCompletion(nn.Module):
             'vicuna13b-16k': "lmsys/vicuna-13b-v1.5-16k",
             'openchat_3.5': "openchat/openchat_3.5",
             'Starling-LM-7B-alpha': "berkeley-nest/Starling-LM-7B-alpha",
-            'Mistral': "mistralai/Mistral-7B-Instruct-v0.3"
+            'Mistral': "mistralai/Mistral-7B-Instruct-v0.3",
+            "llama3": "meta-llama/Meta-Llama-3-8B"
         }
 
         if model_name in self.models:
